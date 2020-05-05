@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For DS1307
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+DS1307 KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+getdayofweek KEYWORD2
+getDate      KEYWORD2
+getMonth     KEYWORD2
+getYear      KEYWORD2
+getMin       KEYWORD2
+getHour      KEYWORD2
+getSec       KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
