@@ -1,0 +1,21 @@
+1 Build a Real Time Clock using Arduino and DS1307 RTC Module:
+         In this article, we are going to build an Arduino Real Time Clock using DS1307 RTC Module and 16×2 LCD module for display. First of all, let’s see how to interface RTC Module to Arduino. There are different kinds of RTC modules available in the market. We are using the most common RTC module comes named DS1307 IC. Interfacing an RTC module to Arduino is pretty simple. You only need to make 2 connections between the RTC module and Arduino and connect LCD display.
+
+
+Program Explanation.
+	We begin including LiquidCrystal library into the program. In the next line, we create a constructor of Liduidcrysal with name lcd and we pass the address of the device.
+
+first create a object of class bez all function are define in Class so create object and acess function.
+
+SetTime if you want using function "SetTime()" pass parameter as mention in program Note: Call this function In void setup bez at intial time only we set the time and Set Clock Mode using Clock_mode() function and if you set 12 hour mode then set "AM" or "PM" mode using function Set_AM_PM().
+
+getSeconds(),getMinutes(),getHour(),getMonth(),getYear(),getDate,getdayoftheweek() using this function acess the time and date and combine in one string.
+
+IN RTClib.h function explanation:
+
+As mentioned earlier  a library named “Wire” is used here for I2C communication.  The  Wire.begin()  function will initiate the wire library. Since it is used for initializing the library, it need to be called only at the beginning. "Wire.beginTransmission()" is the function used for sending device address. Then with Wire.write() we will send the number of the register whose value  we need to access, seconds and minutes refer data sheet.
+
+The "Wire.endTransmission()" function will end the transmission. "Wire.requestFrom()" function is used by the master to request bytes from the module. "Wire.read()" will reads a byte that was transmitted from  slave device to Arduino after a call to re questFrom().
+
+In DS1307, bytes are  stored as binary coded decimals. So before writing values into the registers, we need to convert it into BCD(Binary Coded Decimals). Decimal_To_BCD(char data) function convert to decimal go through that.
+
